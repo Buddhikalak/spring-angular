@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Buddhik's Service</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ><a href="index.html">Regions</a></li>
+                <li class="active"><a href="banglores.html">Banglores</a></li>
+
+            </ul>
+        </div>
+    </nav>
+    <div ng-app="myApp" ng-controller="myCtrl"> 
+        <h1>Banglores</h1>
+        <p>{{Banglores}}</p>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http) {
+            $http({
+                method: "GET",
+                url: "http://localhost:8084/citypak/banglore"
+            }).then(function mySuccess(response) {
+                $scope.Banglores = response.data;
+                var data = angular.fromJson(response.data)
+
+            }, function myError(response) {
+                $scope.Banglores = response.statusText;
+            });
+        });
+
+
+    </script>
+
+
+
+
+</body>
+</html>
