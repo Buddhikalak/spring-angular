@@ -1,4 +1,4 @@
-package com.banglore.App.Model;
+package com.citypak.sandbox.model;
 
 public class region {
 	

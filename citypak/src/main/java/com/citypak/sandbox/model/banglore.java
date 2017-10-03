@@ -4,6 +4,8 @@ public class banglore {
 	int regionid;
 	String banglorename;
 	int idbanglore;
+        
+        
 	public int getIdbanglore() {
 		return idbanglore;
 	}

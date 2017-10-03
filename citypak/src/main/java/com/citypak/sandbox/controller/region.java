@@ -21,13 +21,13 @@ public class region {
     private regionDao bDao;
 
     @RequestMapping(value = "/region", method = RequestMethod.GET)
-    public @ResponseBody List<com.banglore.App.Model.region> get() {
+    public @ResponseBody List<com.citypak.sandbox.model.region> get() {
         HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.setOrigin("*");
         HashMap<String, String> params = new HashMap<String, String>();
-        List<com.banglore.App.Model.region> list = bDao.list(params);
-        System.out.println(list);
+        List<com.citypak.sandbox.model.region> list = bDao.list(params);
+       // System.out.println(list);
         
         
         return list;
